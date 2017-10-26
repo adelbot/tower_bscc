@@ -4,4 +4,4 @@
       - name: ping
         ping:
       - name: Creates the index.php file
-        template: src=index.php.j2 dest=/tmp/index.php
+        template: src=index.php.j2 dest=/tmp/index.demo
