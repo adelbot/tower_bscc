@@ -1,0 +1,9 @@
+---
+  - hosts: all
+#    no_log: true
+    vars:
+      SSHPasswordObject: '{{lookup("cyberarkpassword", {"appid": "AIMWebService", "query": "object=" + inventory_hostname + "-LinuxSSH_I-" + ansible_user, "output": "Password,PassProps.UserName,PassProps.Address,PasswordChangeInProcess"}) }}'
+      ansible_ssh_pass: "{{SSHPasswordObject[0].password}}"
+
+    pre_tasks:
+    - set_fact: ansible_ssh_pass="{{SSHPasswordObject[0].password}}" cacheable=false
