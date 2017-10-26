@@ -1,0 +1,5 @@
+tasks:
+      - name: ping
+        ping:
+      - name: Creates the index.php file
+        template: src=index.php.j2 dest=/tmp/index.php
