@@ -1,6 +1,6 @@
 ---
   - hosts: all
-  tasks:
+    tasks:
       - name: ping
         ping:
       - name: Creates the index.php file
